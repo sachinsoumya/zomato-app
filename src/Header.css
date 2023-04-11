@@ -1,0 +1,10 @@
+.ownBtn{
+    border-radius: 0;
+    background-color: #00000000;
+    color:white;
+    border-color: white;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #d3d4d5;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #c6c7c8;
+  }
