@@ -1,0 +1,11 @@
+.menuWidth{
+    width: 25%;
+}
+
+@media (max-width:915px) {
+    .menuWidth {
+        width: 50%;
+    }
+    
+    
+  }

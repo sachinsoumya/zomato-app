@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 export const QuickDisplay = (props) => {
   console.log(props);
   const listMeal = ({mealData}) => {
     if (mealData) {
       return mealData.map((item) => {
         return (
-          <div className="col-12 col-md-6 col-lg-4  mt-4" key={item._id}>
+         
+         
+          <div className="col-12 col-md-6 col-lg-4  mt-4" key={item._id} >
+             <Link to={`/listing/${item.mealtype_id}`} >
             <div className="shadow-lg border w-100 h-100 d-flex">
               <img
                 src={item.meal_image}
@@ -18,7 +23,9 @@ export const QuickDisplay = (props) => {
                 </div>
               </div>
             </div>
+            </Link>
           </div>
+          
         );
       });
     }

@@ -1,0 +1,11 @@
+.resImgWidth{
+    width:25% ;
+  }
+  
+  @media (max-width:420px) {
+    .resImgWidth{
+      width:100% ;
+    }
+    
+    
+  }
