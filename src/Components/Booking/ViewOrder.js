@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import OrderDisplay from './OrderDisplay';
-let vurl = "http://localhost:5000/orders?email="
+let vurl = "https://resturantapi-okl1.onrender.com/orders?email="
 
 
 

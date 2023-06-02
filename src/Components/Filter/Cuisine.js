@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-const url = "http://localhost:5000/filter"
+const url = "https://resturantapi-okl1.onrender.com/filter"
 export default class Cuisine extends Component {
   filterCuisine = (event) =>{
     let mealId = this.props.mealId;

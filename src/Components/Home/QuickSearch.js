@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { QuickDisplay } from './QuickDisplay'
 
-const qrl = "http://localhost:5000/quickSearch"
+const qrl = "https://resturantapi-okl1.onrender.com/quickSearch"
 export default class QuickSearch extends Component {
  constructor(){
   super()

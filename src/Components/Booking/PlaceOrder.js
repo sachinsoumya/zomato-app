@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Swal from 'sweetalert2'
-const murl = "http://localhost:5000/menuItem";
-const purl = "http://localhost:5000/placeorder";
+const murl = "https://resturantapi-okl1.onrender.com/menuItem";
+const purl = "https://resturantapi-okl1.onrender.com/placeorder";
 
 
 export default class PlaceOrder extends Component {
@@ -14,7 +14,7 @@ export default class PlaceOrder extends Component {
       email: sessionStorage.getItem('userinfo') ? JSON.parse(sessionStorage.getItem('userinfo')).email : 'please provide email',
       phone: sessionStorage.getItem('userinfo') ? JSON.parse(sessionStorage.getItem('userinfo')).phone : 'please provide your number',
       cost: 0,
-      address: "please provide your address",
+      address: "",
       menuItem: "",
       data: "",
     
@@ -50,6 +50,7 @@ export default class PlaceOrder extends Component {
     obj.menuItem = numItem;
 
 if(this.state.data.id){
+  if(this.state.address){
     fetch(purl,{
       method:'POST',
       body:JSON.stringify(obj),
@@ -84,6 +85,13 @@ if(this.state.data.id){
         }
         const paymentObject = new window.Razorpay(options)
         paymentObject.open()
+      }else{
+        Swal.fire(
+          'Please provide address',
+          'you have not given address yet',
+          'warning'
+        )
+      }
       }else{
         Swal.fire({
           icon: 'error',
@@ -232,7 +240,7 @@ addItem = (data) => {
             alert('Razorpay SDK failed to load. Are you online?')
           }
         
-        fetch("http://localhost:4200/razorpay", {
+        fetch("https://payment-z8bf.onrender.com/razorpay", {
           method:"POST",
           body: JSON.stringify({cost:totalPrice}),
           headers: {

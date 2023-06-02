@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-const sortUrl = `http://localhost:5000/filter`;
+const sortUrl = `https://resturantapi-okl1.onrender.com/filter`;
 export default class Sort extends Component {
     filterSort=(e)=>{
         let mealId = this.props.mealId

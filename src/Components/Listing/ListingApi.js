@@ -6,7 +6,7 @@ import Cost from '../Filter/Cost';
 import Sort from '../Filter/Sort';
 
 
-const url = "http://localhost:5000/resturant?mealId=";
+const url = "https://resturantapi-okl1.onrender.com/resturant?mealId=";
 
 export default class ListingApi extends Component {
     constructor(){

@@ -6,7 +6,7 @@ import 'react-tabs/style/react-tabs.css';
 import MenuList from './MenuList';
 import {Link} from 'react-router-dom';
 
-const url = "http://localhost:5000"
+const url = "https://resturantapi-okl1.onrender.com"
 
 export default class Details extends Component {
     constructor(){

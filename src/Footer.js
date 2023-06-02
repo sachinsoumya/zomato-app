@@ -28,7 +28,7 @@ export default class Footer extends Component {
           </div>
           <div className="d-flex  justify-content-center">
             <div>
-              <i className="bi bi-facebook fs-2 "></i>
+              <a href='https://www.facebook.com/your-page-url' target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook fs-2 text-dark"></i></a>
             </div>
             <div>
             <a href="https://www.instagram.com/sachinsoumya/" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram fs-2 ms-3 text-dark"></i></a>
@@ -39,8 +39,9 @@ export default class Footer extends Component {
             </div>
 
           </div>
-          <div>
-
+          <div className='text-center'>
+            <div>Dev by-@sachinsoumya</div>
+            <div>Under guidence-@Sangeetha Shanmugam</div>
           </div>
         </div>
       </div>

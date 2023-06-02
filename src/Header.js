@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './Header.css'
 import { Link, withRouter } from 'react-router-dom/cjs/react-router-dom.min'
 import Swal from 'sweetalert2'
-const url = "http://localhost:4000/api/auth/userInfo"
+const url = "https://loginapp-sc2c.onrender.com/api/auth/userInfo"
 
 class Header extends Component {
     constructor() {

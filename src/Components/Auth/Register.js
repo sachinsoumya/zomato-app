@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Swal from 'sweetalert2'
 
-const rurl = "http://localhost:4000/api/auth/register"
+const rurl = "https://loginapp-sc2c.onrender.com/api/auth/register"
 
 export default class Register extends Component {
   constructor(props){

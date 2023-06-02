@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './Search.css'; 
 
-const lurl = "http://localhost:5000/locations";
-const rurl = "http://localhost:5000/resturant?stateId="
+const lurl = "https://resturantapi-okl1.onrender.com/locations";
+const rurl = "https://resturantapi-okl1.onrender.com/resturant?stateId="
 
 export default class Search extends Component {
  constructor(){

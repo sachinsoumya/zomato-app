@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2'
-let durl = "http://localhost:5000/deleteOrders/"
+let durl = "https://resturantapi-okl1.onrender.com/deleteOrders/"
 // import OrderMenu from './OrderMenu';
 // const murl2 = "http://localhost:5000/menuItem";
 
@@ -14,13 +14,16 @@ export default class OrderDisplay extends Component {
   }
   deleteOrder=(id)=>{
     // console.log('hello'+id)
-    axios.delete(`${durl}${id}`).then((res)=>console.log(res.data));
-    window.location.reload();
+    axios.delete(`${durl}${id}`).then((res)=>{if(res.data){window.location.reload()}});
+    // window.location.reload();
     Swal.fire(
       'warning!',
       'you have deleted one!',
       'info'
     )
+    
+    // window.location.reload();
+    
   }
 
   addMenu = (orders) => {
