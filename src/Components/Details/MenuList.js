@@ -3,15 +3,18 @@ import './MenuList.css'
 
 export default class MenuList extends Component {
   orderId = [];
-  placeOrder = (id) =>{
+  orderName=[]
+  placeOrder = (id ,name) =>{
+    this.orderName.push(name);
     this.orderId.push(id);
     this.props.finalOrder(this.orderId)
     console.log(this.orderId);
 }
 
-removeOrder = (id)=>{
+removeOrder = (id,name)=>{
     if(this.orderId.indexOf(id)> -1){
         this.orderId.splice(this.orderId.indexOf(id) ,1);
+        this.orderName.splice(this.orderName.indexOf(name),1);
         console.log(this.orderId)
     }
 
@@ -22,7 +25,7 @@ renderCart = (orders)=>{
         if(orders){
             
             return orders.map((item , index)=>{
-              return <span class="badge rounded-pill text-bg-danger" key={index}>{item}</span>;
+              return <span className="badge rounded-pill text-bg-danger" key={index}>{item}</span>;
         });
     }
 
@@ -41,7 +44,7 @@ renderCart = (orders)=>{
                 </td>
                 <td className='h6 fs-5'>Rs.{item.menu_price}</td>
                
-                <td><button type='button' className='btn btn-success btn-sm' onClick={()=>{this.placeOrder(item.menu_id)}}><i class="bi bi-plus-square-fill text-dark" ></i></button><button type='button' className='btn btn-danger btn-sm ms-lg-1 mt-1 mt-lg-0' onClick={()=>{this.removeOrder(item.menu_id)}}><i class="bi bi-dash-square-fill text-dark "></i></button></td>
+                <td><button type='button' className='btn btn-success btn-sm' onClick={()=>{this.placeOrder(item.menu_id ,item.menu_name)}}><i className="bi bi-plus-square-fill text-dark" ></i></button><button type='button' className='btn btn-danger btn-sm ms-lg-1 mt-1 mt-lg-0' onClick={()=>{this.removeOrder(item.menu_id,item.menu_name)}}><i className="bi bi-dash-square-fill text-dark "></i></button></td>
               </tr>
               </>
               )
@@ -54,7 +57,7 @@ renderCart = (orders)=>{
                 <div className="container-fluid border border-danger bg-light my-3">
                     <div className="h5">Item Added</div>
                     <div className="panel panel-default">
-                        <div className="panel-body">{this.renderCart(this.orderId)}</div>
+                        <div className="panel-body">{this.renderCart(this.orderName)}</div>
                     </div>
                 </div>
                 <table className="table">

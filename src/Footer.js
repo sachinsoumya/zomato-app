@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link} from 'react-router-dom/cjs/react-router-dom.min'
 
 export default class Footer extends Component {
   render() {
@@ -10,17 +11,17 @@ export default class Footer extends Component {
           </div>
           <div className="d-flex justify-content-evenly">
             <div>
-              <div>About</div>
-              <div>Orders</div>
+              <Link to='/'><div className='text-dark'>Home</div></Link>
+              <Link to='/vieworder'><div className='text-dark'>My Orders<i className="bi bi-cart-check-fill"></i></div></Link>
             </div>
             <div>
-              <div>About</div>
-              <div>Orders</div>
+              <div>About Us</div>
+              <div>Contact Us</div>
 
             </div>
             <div>
-              <div>About</div>
-              <div>Orders</div>
+              <div>Website</div>
+              <div>Help</div>
 
             </div>
 
@@ -30,10 +31,10 @@ export default class Footer extends Component {
               <i className="bi bi-facebook fs-2 "></i>
             </div>
             <div>
-              <i className="bi bi-instagram fs-2 ms-3 "></i>
+            <a href="https://www.instagram.com/sachinsoumya/" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram fs-2 ms-3 text-dark"></i></a>
             </div>
             <div>
-              <i className="bi bi-youtube fs-2 ms-3"></i>
+             <a href="https://www.youtube.com/@soumyasachinpanda2280/featured" target="_blank" rel="noopener noreferrer"><i className="bi bi-youtube fs-2 ms-3 text-dark"></i></a> 
 
             </div>
 

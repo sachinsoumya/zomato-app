@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Swal from 'sweetalert2'
 
 const rurl = "http://localhost:4000/api/auth/register"
 
@@ -27,6 +28,12 @@ export default class Register extends Component {
         body:JSON.stringify(this.state),
     }).then(
         this.props.history.push('/login'));
+        Swal.fire(
+          'Great!',
+          'Thank you for register!',
+          'success'
+        )
+
   }
 
 

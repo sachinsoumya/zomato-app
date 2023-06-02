@@ -30,11 +30,11 @@ export default class ListingApi extends Component {
       <div>
         <div className="px-5 py-3 overflow-hidden">
         <div className=" w-100 h-100 px-3 ">
-          <div className="text-primary h1">Breakfast Places in Mumbai</div>
+          <div className="text-primary h1">{this.props.match.params.mealType} Places in India</div>
           <div className="row">
             <div className="col-12 col-lg-4 px-3">
               <div className="py-3 text-primary">
-              <div class="h4">Filters</div>
+              <div className="h4">Filters</div>
               </div>
               <Cuisine mealId={this.props.match.params.mealId} resPerCuisine={((data)=>{
                   this.setCuisineData(data)
@@ -59,7 +59,9 @@ export default class ListingApi extends Component {
 
   componentDidMount (){
     let mealId = this.props.match.params.mealId;
+    let mealType = this.props.match.params.mealType;
     sessionStorage.setItem("mealId" ,mealId);
+    sessionStorage.setItem("mealType",mealType);
     axios.get(`${url}${mealId}` , {method:"GET"})
     .then((res)=>this.setState({resturantList:res.data}));
   

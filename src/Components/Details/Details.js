@@ -15,7 +15,8 @@ export default class Details extends Component {
             details:"",
             menulist:"",
             userItem :"",
-            mealId:sessionStorage.getItem("mealId")
+            mealId:sessionStorage.getItem("mealId"),
+            mealType:sessionStorage.getItem("mealType")
             
             
 
@@ -64,7 +65,7 @@ export default class Details extends Component {
                     </TabList>
                     <TabPanel>
                       <div className='h5 text-primary'>About this place</div>
-                      <div className="h6 text-primary">Rating -<span className='text-danger ps-2'>{details.average_rating}</span></div>
+                      <div className="h6 text-primary">Rating -<span className='text-danger ps-2'>{details.average_rating}/5({details.rating_text})</span></div>
                      
                     </TabPanel>
                     <TabPanel>
@@ -84,7 +85,7 @@ export default class Details extends Component {
             </div>
             </div>
             <div className="d-flex justify-content-between container-fluid">
-              <Link to={`/listing/${this.state.mealId}`} className='btn btn-danger'>Back</Link>
+              <Link to={`/listing/${this.state.mealId}/${this.state.mealType}`} className='btn btn-danger'>Back</Link>
               <Link  className='btn btn-primary' onClick={this.proceed}>Proceed</Link>
 
             </div>

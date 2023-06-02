@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import './QuickDisplay.css'; 
 
 export const QuickDisplay = (props) => {
   console.log(props);
@@ -9,8 +10,8 @@ export const QuickDisplay = (props) => {
          
          
           <div className="col-12 col-md-6 col-lg-4  mt-4" key={item._id} >
-             <Link to={`/listing/${item.mealtype_id}`} >
-            <div className="shadow-lg border w-100 h-100 d-flex">
+             <Link to={`/listing/${item.mealtype_id}/${item.mealtype}`} >
+            <div className="shadow-lg border w-100 h-100 d-flex card-image">
               <img
                 src={item.meal_image}
                 alt="Idle"
