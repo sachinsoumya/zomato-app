@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 import Swal from 'sweetalert2'
 let durl = "https://resturantapi-okl1.onrender.com/deleteOrders/"
-// import OrderMenu from './OrderMenu';
-// const murl2 = "http://localhost:5000/menuItem";
 
-export default class OrderDisplay extends Component {
+
+ class OrderDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,19 +14,19 @@ export default class OrderDisplay extends Component {
   }
   deleteOrder=(id)=>{
     // console.log('hello'+id)
-    axios.delete(`${durl}${id}`).then((res)=>{if(res.data){window.location.reload()}});
-    // window.location.reload();
+    axios.delete(`${durl}${id}`).then((res)=>{console.log(res.data)});
+    this.props.history.push('/');
     Swal.fire(
       'warning!',
       'you have deleted one!',
       'info'
     )
-    
-    // window.location.reload();
+   
     
   }
 
   addMenu = (orders) => {
+    console.log(this.props.history)
     console.log(orders)
     // console.log(this.props.orderData)
     if (orders) {
@@ -93,5 +93,7 @@ export default class OrderDisplay extends Component {
     )
   }
 }
+
+export default withRouter(OrderDisplay);
 
 

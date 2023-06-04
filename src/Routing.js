@@ -8,6 +8,7 @@ import PlaceOrder from "./Components/Booking/PlaceOrder";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import ViewOrder from "./Components/Booking/ViewOrder";
+
 const Routing = () =>{
     return (
         <BrowserRouter>
@@ -20,6 +21,7 @@ const Routing = () =>{
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/vieworder" component={ViewOrder} />
+            
 
             <Footer />
         </div>

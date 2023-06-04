@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Swal from 'sweetalert2'
-
 const lurl = "https://loginapp-sc2c.onrender.com/api/auth/login"
 
 export default class Login extends Component {
