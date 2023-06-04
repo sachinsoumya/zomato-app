@@ -164,18 +164,18 @@ addItem = (data) => {
                 <form>
                   <div className="mb-3">
                     <label htmlFor="exampleInputName1" className="form-label"> Name</label>
-                    <input type="text" className="form-control" id="exampleInputName1" value={this.state.name} />
+                    <input type="text" className="form-control" id="exampleInputName1" value={this.state.name} readOnly={true}/>
 
                   </div>
                   <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={this.state.email} />
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={this.state.email} readOnly={true} />
                     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                   </div>
 
                   <div className="mb-3">
                     <label htmlFor="exampleInputPhone1" className="form-label">Phone</label>
-                    <input type="phone" className="form-control" id="exampleInputPhone1" value={this.state.phone} />
+                    <input type="phone" className="form-control" id="exampleInputPhone1" value={this.state.phone} readOnly={true} />
                   </div>
                   <div className="mb-3">
                     <label htmlFor="exampleInputAddress1" className="form-label">Address</label>
